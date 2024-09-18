@@ -1,0 +1,245 @@
+
+    
+    <main>
+      <div class="home" *ngIf="!(afAuth.authState | async)">
+    
+        <h1>Trello Boards</h1>
+        <h3>made with love using Angular & Firebase</h3>
+        <p>To use the app, you must sign up using the Google account</p>
+    
+    
+    
+    <button mat-raised-button color="primary" appGoogleSignin>Google Sign In</button>
+  </div>
+  <div class="home" *ngIf="afAuth.authState|async as user">
+    <p>You're currently signed in as <strong>{{user.displayName}}</strong></p>
+
+
+    <!--TODO show user profile image from the google, currently its giving a 403 error code -->
+
+    <!-- <img [src]="user.photoURL" alt="">
+    <p>{{user.photoURL}}</p> -->
+
+    <button class="logout" mat-raised-button (click)="afAuth.signOut()" color="primary">Sign out</button>
+  </div>
+</main>
+    <div class="hero-color"></div>
+
+    <div class="container">
+      <div class="hero">
+        <div class="float-left">
+          <div class="bootstrap-styles">
+            <p class="header">
+              Trello helps teams move work forward.
+            </p>
+          </div>
+          <p class="content">
+            Collaborate, manage projects, and reach new productivity peaks. From high rises to the home office, the way your team works is unique—accomplish it all with Trello.
+          </p>
+          <form id="sign-up" class="sign-up">
+            <input type="text" name="email" id="email" type="email" placeholder="Email">
+            <button type="button">Sign up - it's free</button>
+          </form>
+        </div>
+        <div class="float-right">
+          <img src="../../../assets/hero.webp" alt="hero image">
+        </div>
+      </div>
+      
+      <div class="item-1">
+        <p class="header">
+          It’s more than work. It’s a way of working together.
+        </p>
+        <p class="content">
+          Start with a Trello board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.
+        </p>
+        <button type="button">Start doing
+          <span> ></span>
+        </button>
+        <img class="board" src="../../../assets/board.webp" alt="Board image of trello">
+        <p class="content">
+          Join over 1,000,000 teams worldwide that are using Trello to get more done.
+        </p>
+        <div class="clients">
+          <img src="../../../assets/google.svg" alt="Google client logo">
+          <img src="../../../assets/google-logo.svg" alt="Fender client logo">
+          <img src="../../../assets/squarespace.svg" alt="square space client logo">
+          <img src="../../../assets/costco.svg" alt="costco client logo">
+        </div>
+      </div>
+
+      <div class="item-2">
+        <div class="grid-1">
+          <p class="header">
+            Features to help your team succeed
+          </p>
+          <p class="content">
+            Powering a productive team means using a powerful tool (and plenty of snacks). From meetings and projects to events and goal setting, Trello’s intuitive features give any team the ability to quickly set up and customize workflows for just about anything.
+          </p>
+        </div>
+        <div class="grid-2"></div>
+        <div class="grid-3">
+          <img src="../../../assets/view.svg" alt="view image">
+        </div>
+        <div class="grid-4">
+          <p class="action">
+            CHOOSE A VIEW
+          </p>
+          <p class="header">
+            The board is just the beginning
+          </p>
+          <p class="content">
+            Lists and cards are the building blocks of organizing work on a Trello board. Grow from there with task assignments, timelines, productivity metrics, calendars, and more.
+          </p>
+          <button>+ Learn more</button>
+        </div>
+        <div class="grid-5">
+          <p class="action">
+            DIVE INTO THE DETAILS
+          </p>
+          <p class="header">
+            Cards contain everything you need
+          </p>
+          <p class="content">
+            Trello cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates. Open any card to uncover an ecosystem of checklists, due dates, attachments, conversations, and more.
+          </p>
+          <button>+ Learn more</button>
+        </div>
+        <div class="grid-6">
+          <img src="../../../assets/card-back.svg" alt="card back image">
+        </div>
+        <div class="grid-7">
+          <img src="../../../assets/automation.webp" alt="automation image">
+        </div>
+        <div class="grid-8">
+          <p class="action">
+            MEET YOUR NEW BUTLER
+          </p>
+          <p class="header">
+            No-code automation
+          </p>
+          <p class="content">
+            Let the robots do the work—so your team can focus on work that matters. With Trello’s built-in automation, Butler, reduce the number of tedious tasks (and clicks) on your project board by harnessing the power of automation across your entire team.
+          </p>
+          <button>+ Learn more</button>
+        </div>
+        <div class="grid-9">
+          <p class="action">
+            POWER-UPS
+          </p>
+          <p class="header">
+            Integrate top work tools
+          </p>
+          <p class="content">
+            Easily connect the apps your team already uses into your Trello workflow, or add a Power-Up that helps fine-tune one specific need. With hundreds of Power-Ups available, your team’s workflow wishes are covered.
+          </p>
+          <button>+ Learn more</button>
+        </div>
+        <div class="grid-10">
+          <img src="../../../assets/power-ups.webp" alt="power-ups image">
+        </div>
+      </div>
+
+      <div class="item-3">
+        <div class="i">
+          <img class="tag" src="../../../assets/tag.svg" alt="tag image">
+          <div class="content">
+            <p class="header">See our pricing</p>
+            <p class="contentin">Whether you’re a team of 2 or 2,000, there’s a Trello tailor-made for your organization.</p>
+            <button>Trello pricing</button>
+          </div>
+        </div>
+        <div class="i">
+          <img class="compass" src="../../../assets/compass.svg" alt="compass image">
+          <div class="content" style="padding-right: 0rem;">
+            <p class="header">Take a Trello tour</p>
+            <p class="contentin">Explore the world of boards and beyond in Trello. Dive deeper into our most popular features.</p>
+            <button>Tour Trello</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-4">
+        <div class="bootstrap-styles">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-block w-100 py-4">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi rem officiis amet, expedita fugit placeat consectetur praesentium ipsa. Aperiam, beatae.
+                </div>
+                <img src="../../../assets/Fender_Logo.svg" class="d-block w-20 m-auto" alt="...">
+              </div>
+              <div class="carousel-item">
+                <div class="d-block w-100 py-4">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi rem officiis amet, expedita fugit placeat consectetur praesentium ipsa. Aperiam, beatae.
+                </div>
+                <img src="../../../assets/google.svg" class="d-block w-20 m-auto" alt="...">
+              </div>
+              <div class="carousel-item">
+                <div class="d-block w-100 py-4">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi rem officiis amet, expedita fugit placeat consectetur praesentium ipsa. Aperiam, beatae.
+                </div>
+                <img src="../../../assets/costco.svg" class="d-block w-20 m-auto" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="item-5">
+        <img class="tm" src="../../../assets/automation.webp" alt="Trello image">
+        <p class="header">Work with any team</p>
+        <p class="content">Whether it’s for work, a side project or even the next family vacation, Trello helps your team stay organized.</p>
+        <button>More reasons to use Trello
+          <span> > </span>
+        </button>
+      </div>
+      
+    
+    
+    
+    
+    
+    
+     
+    
+     
+    
+    
+<!--     
+    <main>
+      <div class="home" *ngIf="!(afAuth.authState | async)">
+    
+        <h1>Trello Boards</h1>
+        <h3>made with love using Angular & Firebase</h3>
+        <p>To use the app, you must sign up using the Google account</p>
+    
+    
+    
+    <button mat-raised-button color="primary" appGoogleSignin>Google Sign In</button>
+  </div>
+  <div class="home" *ngIf="afAuth.authState|async as user">
+    <p>You're currently signed in as <strong>{{user.displayName}}</strong></p>
+
+
+    <!--TODO show user profile image from the google, currently its giving a 403 error code -->
+
+    <!-- <img [src]="user.photoURL" alt="">
+    <p>{{user.photoURL}}</p> -->
+
+    <!-- <button class="logout" mat-raised-button (click)="afAuth.signOut()" color="primary">Sign out</button>
+  </div>
+</main>  -->
